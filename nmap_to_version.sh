@@ -14,4 +14,4 @@ nmap -p- -vv -Pn -n $ip -oA all-ports
 
 cat all-ports.xml | grep -i portid | awk '{print $3}' | awk -F '"' '{print $2}' > ports.txt
 
-nmap -p$(cat ports.txt) -sV -sC -Pn -n -vv $ip -oA service-scan
+nmap -p$(paste -sd, - < ports.txt) -sV -sC -Pn -n -vv $ip -oA service-scan
