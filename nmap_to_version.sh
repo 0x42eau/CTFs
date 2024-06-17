@@ -2,7 +2,7 @@
 
 # ./nmap_to_version.sh <ip>
 
-if [ $# -ne 5 ]; then
+if [ $# -ne 1 ]; then
 	echo 'Usage: ./nmap_to_version.sh <ip>'
 	echo 'Example: ./nmap_to_version.sh 10.10.11.12'
 	exit -1
